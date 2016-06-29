@@ -67,8 +67,10 @@ export default class RIEStatefulBase extends RIEBase {
     };
 
     elementClick = (event) => {
-        this.startEditing();
-        event.target.element.focus();
+        if (!this.props.disabled) {
+            this.startEditing();
+            event.target.element.focus();    
+        }
     };
 
     render = () => {
