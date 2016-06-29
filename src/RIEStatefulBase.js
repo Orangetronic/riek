@@ -8,7 +8,7 @@ export default class RIEStatefulBase extends RIEBase {
     }
 
     startEditing = () => {
-        this.setState({editing: true});
+        if (!this.props.disabled) this.setState({editing: true});
     };
 
     finishEditing = () => {

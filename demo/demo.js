@@ -284,6 +284,7 @@
 	              value: _this.state.text,
 	              change: _this.virtualServerCallback,
 	              propName: 'text',
+
 	              className: _this.state.highlight ? "editable" : "",
 	              validate: _this.isStringAcceptable,
 	              classLoading: 'loading',
@@ -16758,7 +16759,7 @@
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RIEStatefulBase).call(this, props));
 
 	        _this.startEditing = function () {
-	            _this.setState({ editing: true });
+	            if (!_this.props.disabled) _this.setState({ editing: true });
 	        };
 
 	        _this.finishEditing = function () {
